@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - .:/usr/src/app
+    # Nombre del contenedor 
+    container_name: wolf_api_web
+
+    command: python manage.py runserver 0.0.0.0:8000
